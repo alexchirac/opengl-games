@@ -1,3 +1,8 @@
+/**
+ * OpenGL Games Collection
+ * A collection of 3D and 2D games built with OpenGL
+ */
+
 #include <ctime>
 #include <iostream>
 
@@ -34,22 +39,22 @@ int main(int argc, char **argv)
 {
     srand((unsigned int)time(NULL));
 
-    // Create a window property structure
+    // Create window properties
     WindowProperties wp;
     wp.resolution = glm::ivec2(1280, 720);
     wp.vSync = true;
     wp.selfDir = GetParentDir(std::string(argv[0]));
 
-    // Init the Engine and create a new window with the defined properties
+    // Initialize engine and create window
     (void)Engine::Init(wp);
 
-    // Create a new 3D world and start running it
+    // Select and run a game
     World* world = new m1::DroneDelivery();
+    // World* world = new m1::TankWars();
 
     world->Init();
     world->Run();
 
-    // Signals to the Engine to release the OpenGL context
     Engine::Exit();
 
     return 0;

@@ -272,10 +272,7 @@ void TankWars::landslide() {
 
 void TankWars::Update(float deltaTimeSeconds)
 {
-    // TODO(student): Update steps for translation, rotation and scale,
-    // in order to create animations. Use the class variables in the
-    // class header, and if you need more of them to complete the task,
-    // add them over there!
+    // Update game state
     updateAndRenderProjectiles(deltaTimeSeconds);
 
     renderTank(tankA);

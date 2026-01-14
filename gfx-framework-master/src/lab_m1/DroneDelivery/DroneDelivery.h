@@ -55,7 +55,6 @@ namespace m1
         glm::mat4 projectionMatrix;
         bool renderCameraTarget;
 
-        // TODO(student): If you need any other class variables, define them here.
         gfxc::TextRenderer* textRenderer;
         float fovy = 60;
         float sizex = 20;

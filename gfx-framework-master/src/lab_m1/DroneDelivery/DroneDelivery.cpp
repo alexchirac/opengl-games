@@ -498,22 +498,21 @@ void DroneDelivery::RenderSimpleMesh(Mesh* mesh, Shader* shader, const glm::mat4
     // Render an object using the specified shader and the specified position
     glUseProgram(shader->program);
 
-    // TODO(student): Get shader location for uniform mat4 "Model"
+    // Set Model matrix uniform
     auto location = glGetUniformLocation(shader->program, "Model");
     glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(modelMatrix));
 
-    // TODO(student): Get shader location for uniform mat4 "View"
+    // Set View matrix uniform
     location = glGetUniformLocation(shader->program, "View");
 
 
-    // TODO(student): Set shader uniform "View" to viewMatrix
+    // Set shader uniform "View" to viewMatrix
     glm::mat4 viewMatrix = camera->GetViewMatrix();
     glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(viewMatrix));
 
-    // TODO(student): Get shader location for uniform mat4 "Projection"
+    // Set Projection matrix uniform
     location = glGetUniformLocation(shader->program, "Projection");
 
-    // TODO(student): Set shader uniform "Projection" to projectionMatrix
     glm::mat4 projectionMatrix = this->projectionMatrix;
     glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(projectionMatrix));
 
@@ -534,34 +533,28 @@ void DroneDelivery::OnInputUpdate(float deltaTime, int mods)
         float cameraSpeed = 2.0f;
 
         if (window->KeyHold(GLFW_KEY_W)) {
-            // TODO(student): Translate the camera forward
             camera1->MoveForward(cameraSpeed * deltaTime);
         }
 
         if (window->KeyHold(GLFW_KEY_A)) {
-            // TODO(student): Translate the camera to the left
             camera1->TranslateRight(-cameraSpeed * deltaTime);
         }
 
         if (window->KeyHold(GLFW_KEY_S)) {
-            // TODO(student): Translate the camera backward
             camera1->MoveForward(-cameraSpeed * deltaTime);
 
         }
 
         if (window->KeyHold(GLFW_KEY_D)) {
-            // TODO(student): Translate the camera to the right
             camera1->TranslateRight(cameraSpeed * deltaTime);
 
         }
 
         if (window->KeyHold(GLFW_KEY_Q)) {
-            // TODO(student): Translate the camera downward
             camera1->TranslateUpward(cameraSpeed * deltaTime);
         }
 
         if (window->KeyHold(GLFW_KEY_E)) {
-            // TODO(student): Translate the camera upward
             camera1->TranslateUpward(-cameraSpeed * deltaTime);
 
         }

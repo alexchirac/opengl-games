@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
+# OpenGL Games Collection
+# A collection of 3D and 2D games built with OpenGL and C++
 
 # Set root directory, if needed
 if (NOT GFXF_ROOT_DIR)
@@ -8,7 +10,7 @@ endif()
 
 
 # Set the name of the project
-set(target_name GFXFramework)
+set(target_name OpenGLGames)
 project(${target_name} C CXX)
 
 
